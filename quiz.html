@@ -1,0 +1,38 @@
+<main class="container quiz-page">
+  <section class="quiz-meta">
+    <p id="category-label" class="category-label"></p>
+    <p id="question-count" class="question-count"></p>
+  </section>
+
+  <section class="quiz-card">
+    <h2 class="question-title">問題</h2>
+    <p id="question-text" class="question-text"></p>
+
+    <div id="choices" class="choices"></div>
+
+    <div class="actions">
+      <button id="answer-button" class="button primary" type="button">回答する</button>
+    </div>
+  </section>
+
+  <section id="result-section" class="result-card is-hidden">
+    <h3>結果</h3>
+    <p id="result-text" class="result-text"></p>
+    <p id="answer-text" class="answer-text"></p>
+  </section>
+
+  <section id="explanation-section" class="explanation-card is-hidden">
+    <h3>解説</h3>
+    <p id="explanation-text"></p>
+
+    <h4>各選択肢の確認</h4>
+    <ul id="wrong-choice-list"></ul>
+  </section>
+
+  <section class="quiz-navigation">
+    <button id="prev-button" class="button" type="button">前の問題</button>
+    <button id="next-button" class="button" type="button">次の問題</button>
+  </section>
+</main>
+
+<script src="assets/js/quiz.js"></script>
