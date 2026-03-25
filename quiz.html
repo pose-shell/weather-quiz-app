@@ -1,38 +1,60 @@
-<main class="container quiz-page">
-  <section class="quiz-meta">
-    <p id="category-label" class="category-label"></p>
-    <p id="question-count" class="question-count"></p>
-  </section>
-
-  <section class="quiz-card">
-    <h2 class="question-title">問題</h2>
-    <p id="question-text" class="question-text"></p>
-
-    <div id="choices" class="choices"></div>
-
-    <div class="actions">
-      <button id="answer-button" class="button primary" type="button">回答する</button>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>演習 | 気象予報士 学科専門 演習サイト</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1><a href="index.html">気象予報士 学科専門 演習サイト</a></h1>
+      <nav>
+        <a href="categories.html">カテゴリ別演習</a>
+        <a href="questions.html">問題一覧</a>
+        <a href="summaries.html">分野別まとめ</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section id="result-section" class="result-card is-hidden">
-    <h3>結果</h3>
-    <p id="result-text" class="result-text"></p>
-    <p id="answer-text" class="answer-text"></p>
-  </section>
+  <main class="container quiz-page">
+    <section class="quiz-meta">
+      <p id="category-label" class="category-label"></p>
+      <p id="question-count" class="question-count"></p>
+    </section>
 
-  <section id="explanation-section" class="explanation-card is-hidden">
-    <h3>解説</h3>
-    <p id="explanation-text"></p>
+    <section class="quiz-card">
+      <h2 class="question-title">問題</h2>
+      <p id="question-text" class="question-text"></p>
 
-    <h4>各選択肢の確認</h4>
-    <ul id="wrong-choice-list"></ul>
-  </section>
+      <div id="choices" class="choices"></div>
 
-  <section class="quiz-navigation">
-    <button id="prev-button" class="button" type="button">前の問題</button>
-    <button id="next-button" class="button" type="button">次の問題</button>
-  </section>
-</main>
+      <div class="actions">
+        <button id="answer-button" class="button primary" type="button">回答する</button>
+      </div>
+    </section>
 
-<script src="assets/js/quiz.js"></script>
+    <section id="result-section" class="result-card is-hidden">
+      <h3>結果</h3>
+      <p id="result-text" class="result-text"></p>
+      <p id="answer-text" class="answer-text"></p>
+    </section>
+
+    <section id="explanation-section" class="explanation-card is-hidden">
+      <h3>解説</h3>
+      <p id="explanation-text"></p>
+
+      <h4>各選択肢の確認</h4>
+      <ul id="wrong-choice-list"></ul>
+    </section>
+
+    <section class="quiz-navigation">
+      <button id="prev-button" class="button" type="button">前の問題</button>
+      <button id="next-button" class="button" type="button">次の問題</button>
+    </section>
+  </main>
+
+  <script src="assets/js/quiz.js"></script>
+</body>
+</html>
