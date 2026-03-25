@@ -1,0 +1,95 @@
+[
+  {
+    "id": "senmon-nwp-001",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "numerical-weather-prediction",
+    "subcategory": "data-assimilation",
+    "title": "初期値作成の基本",
+    "difficulty": 2,
+    "tags": ["数値予報", "初期値", "データ同化"],
+    "question": "数値予報モデルの初期値作成で用いられる手法として最も適切なものはどれか。",
+    "choices": [
+      "データ同化",
+      "放射冷却",
+      "断熱圧縮",
+      "対流パラメタリゼーション"
+    ],
+    "answer": 0,
+    "explanation": "初期値作成では、観測データとモデルの背景場を組み合わせて大気状態を推定するデータ同化が用いられる。",
+    "wrong_choice_explanations": [
+      "正解。観測値とモデルの予報値を統合して初期値を作る手法である。",
+      "放射冷却は大気の熱収支に関する現象であり、初期値作成手法ではない。",
+      "断熱圧縮は空気塊の状態変化であり、初期値作成手法ではない。",
+      "対流パラメタリゼーションはモデル内で対流を近似表現する仕組みであり、初期値作成そのものではない。"
+    ],
+    "related_articles": [
+      "summaries.html#numerical-weather-prediction"
+    ],
+    "status": "published",
+    "created_at": "2026-03-24",
+    "updated_at": "2026-03-24"
+  },
+  {
+    "id": "senmon-nwp-002",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "numerical-weather-prediction",
+    "subcategory": "model-resolution",
+    "title": "モデルの格子間隔",
+    "difficulty": 1,
+    "tags": ["数値予報", "格子間隔", "モデル"],
+    "question": "数値予報モデルの水平格子間隔を細かくしたとき、一般に期待される効果として最も適切なものはどれか。",
+    "choices": [
+      "より細かい現象を表現しやすくなる",
+      "必ず計算時間が短くなる",
+      "観測が不要になる",
+      "初期値誤差が消える"
+    ],
+    "answer": 0,
+    "explanation": "格子間隔を細かくすると、より細かな現象を表現しやすくなる。一方で計算量は一般に増える。",
+    "wrong_choice_explanations": [
+      "正解。高解像度化により細かな構造を扱いやすくなる。",
+      "格子間隔を細かくすると一般には計算量が増え、計算時間は短くなりにくい。",
+      "高解像度化しても観測は必要である。",
+      "格子間隔を細かくしても初期値誤差そのものが消えるわけではない。"
+    ],
+    "related_articles": [
+      "summaries.html#numerical-weather-prediction"
+    ],
+    "status": "published",
+    "created_at": "2026-03-24",
+    "updated_at": "2026-03-24"
+  },
+  {
+    "id": "senmon-nwp-003",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "numerical-weather-prediction",
+    "subcategory": "ensemble-forecast",
+    "title": "アンサンブル予報の目的",
+    "difficulty": 2,
+    "tags": ["数値予報", "アンサンブル予報", "予測不確実性"],
+    "question": "アンサンブル予報を行う主な目的として最も適切なものはどれか。",
+    "choices": [
+      "予報の不確実性を評価するため",
+      "観測機器を校正するため",
+      "過去の天気図を作成するため",
+      "地上観測を不要にするため"
+    ],
+    "answer": 0,
+    "explanation": "アンサンブル予報は、初期値やモデルの違いによる予報のばらつきを見て、不確実性を評価するために用いられる。",
+    "wrong_choice_explanations": [
+      "正解。予報のばらつきを通じて不確実性を把握する。",
+      "観測機器の校正が主目的ではない。",
+      "過去の天気図作成が主目的ではない。",
+      "アンサンブル予報を行っても地上観測は必要である。"
+    ],
+    "related_articles": [
+      "summaries.html#numerical-weather-prediction"
+    ],
+    "status": "published",
+    "created_at": "2026-03-24",
+    "updated_at": "2026-03-24"
+  }
+]
