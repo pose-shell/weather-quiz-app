@@ -1,0 +1,25 @@
+.choice-button.selected {
+  outline: 2px solid #333;
+}
+
+.choice-button.correct-choice {
+  background-color: #e8f7e8;
+}
+
+.choice-button.incorrect-choice {
+  background-color: #fdeaea;
+}
+
+.result-text.correct {
+  color: #1f7a1f;
+  font-weight: bold;
+}
+
+.result-text.incorrect {
+  color: #b00020;
+  font-weight: bold;
+}
+
+.is-hidden {
+  display: none;
+}
