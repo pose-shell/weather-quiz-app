@@ -1,12 +1,34 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  const DATA_PATH = "assets/data/questions/numerical-weather-prediction.json";
+  const CATEGORY_FILE_MAP = {
+    "numerical-weather-prediction": "assets/data/questions/numerical-weather-prediction.json",
+    "observation": "assets/data/questions/observation.json",
+    "synoptic-analysis": "assets/data/questions/synoptic-analysis.json",
+    "short-range-forecast": "assets/data/questions/short-range-forecast.json",
+    "local-phenomena": "assets/data/questions/local-phenomena.json",
+    "weather-disaster": "assets/data/questions/weather-disaster.json",
+    "forecast-operations": "assets/data/questions/forecast-operations.json"
+  };
+
+  const CATEGORY_LABEL_MAP = {
+    "numerical-weather-prediction": "数値予報",
+    "observation": "観測",
+    "synoptic-analysis": "総観解析",
+    "short-range-forecast": "短時間予報",
+    "local-phenomena": "局地現象",
+    "weather-disaster": "気象災害",
+    "forecast-operations": "情報利用・予報業務"
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category") || "numerical-weather-prediction";
+  const dataPath = CATEGORY_FILE_MAP[category];
 
   let questions = [];
   let currentIndex = 0;
   let selectedChoiceIndex = null;
   let answered = false;
 
-  // 要素取得
+  const pageTitleEl = document.getElementById("page-title");
   const categoryLabelEl = document.getElementById("category-label");
   const questionCountEl = document.getElementById("question-count");
   const questionTextEl = document.getElementById("question-text");
@@ -24,9 +46,13 @@ document.addEventListener("DOMContentLoaded", async () => {
   const prevButtonEl = document.getElementById("prev-button");
   const nextButtonEl = document.getElementById("next-button");
 
-  // JSON読み込み
+  if (!dataPath) {
+    showLoadError("存在しないカテゴリです。");
+    return;
+  }
+
   try {
-    const response = await fetch(DATA_PATH, { cache: "no-store" });
+    const response = await fetch(dataPath, { cache: "no-store" });
 
     if (!response.ok) {
       throw new Error(`問題JSONの取得に失敗しました: ${response.status}`);
@@ -41,23 +67,37 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderQuestion();
   } catch (error) {
     console.error(error);
-    questionTextEl.textContent = "問題データの読み込みに失敗しました。";
+    showLoadError("問題データの読み込みに失敗しました。");
+  }
+
+  function showLoadError(message) {
+    if (pageTitleEl) {
+      pageTitleEl.textContent = "演習を読み込めませんでした";
+    }
+    categoryLabelEl.textContent = "";
+    questionCountEl.textContent = "";
+    questionTextEl.textContent = message;
     choicesEl.innerHTML = "";
     answerButtonEl.disabled = true;
-    return;
+    prevButtonEl.disabled = true;
+    nextButtonEl.disabled = true;
   }
 
   function renderQuestion() {
     const question = questions[currentIndex];
+    const categoryLabel = CATEGORY_LABEL_MAP[category] || category;
 
     selectedChoiceIndex = null;
     answered = false;
 
-    categoryLabelEl.textContent = getCategoryLabel(question.category);
+    if (pageTitleEl) {
+      pageTitleEl.textContent = `${categoryLabel}の演習`;
+    }
+
+    categoryLabelEl.textContent = categoryLabel;
     questionCountEl.textContent = `${currentIndex + 1} / ${questions.length}`;
     questionTextEl.textContent = question.question;
 
-    // 選択肢初期化
     choicesEl.innerHTML = "";
 
     question.choices.forEach((choice, index) => {
@@ -68,7 +108,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       button.addEventListener("click", () => {
         if (answered) return;
-
         selectedChoiceIndex = index;
         updateChoiceSelection();
       });
@@ -76,7 +115,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       choicesEl.appendChild(button);
     });
 
-    // 結果・解説を隠す
     resultSectionEl.classList.add("is-hidden");
     explanationSectionEl.classList.add("is-hidden");
     resultTextEl.textContent = "";
@@ -84,7 +122,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     explanationTextEl.textContent = "";
     wrongChoiceListEl.innerHTML = "";
 
-    // ボタン状態
     answerButtonEl.disabled = false;
     prevButtonEl.disabled = currentIndex === 0;
     nextButtonEl.disabled = currentIndex === questions.length - 1;
@@ -170,20 +207,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function choiceLabel(index) {
     return ["A", "B", "C", "D"][index] ?? String(index + 1);
-  }
-
-  function getCategoryLabel(category) {
-    const map = {
-      "numerical-weather-prediction": "数値予報",
-      "observation": "観測",
-      "synoptic-analysis": "総観解析",
-      "short-range-forecast": "短時間予報",
-      "local-phenomena": "局地現象",
-      "weather-disaster": "気象災害",
-      "forecast-operations": "情報利用・予報業務"
-    };
-
-    return map[category] || category;
   }
 
   answerButtonEl.addEventListener("click", judgeAnswer);
