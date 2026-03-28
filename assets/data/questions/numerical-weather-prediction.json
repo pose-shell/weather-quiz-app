@@ -91,5 +91,67 @@
     "status": "published",
     "created_at": "2026-03-24",
     "updated_at": "2026-03-24"
+  },
+  {
+  "id": "senmon-nwp-004",
+  "exam_type": "senmon",
+  "question_type": "mcq",
+  "category": "numerical-weather-prediction",
+  "subcategory": "forecast-error",
+  "title": "予報誤差の成長",
+  "difficulty": 2,
+  "tags": ["数値予報", "予報誤差", "初期値誤差"],
+  "question": "数値予報において、予報時間が長くなるにつれて一般に見られる傾向として最も適切なものはどれか。",
+  "choices": [
+    "初期値誤差の影響が次第に拡大し、予報誤差が大きくなりやすい",
+    "予報時間が長いほど観測データが増えるため、予報誤差は必ず小さくなる",
+    "予報時間が24時間を超えると、初期値は予報結果に影響しなくなる",
+    "予報誤差は計算機の性能だけで決まり、大気の状態には左右されない"
+  ],
+  "answer": 0,
+  "explanation": "数値予報では、初期値に含まれるわずかな誤差やモデル誤差の影響が時間とともに成長し、一般に予報時間が長くなるほど予報の不確実性は大きくなりやすい。",
+  "wrong_choice_explanations": [
+    "正解。初期値誤差やモデル誤差は時間とともに成長し、予報の不確実性を大きくする。",
+    "予報時間が長くなるほど、その予報そのものの誤差が必ず小さくなるわけではない。",
+    "初期値は長い予報時間でも影響を持ち続け、不確実性の主要因の一つである。",
+    "予報誤差は計算機性能だけでなく、初期値、大気の変動性、モデルの表現精度などにも左右される。"
+  ],
+  "related_articles": [
+    "summaries.html#numerical-weather-prediction"
+  ],
+  "status": "published",
+  "created_at": "2026-03-28",
+  "updated_at": "2026-03-28"
+  },
+{
+  "id": "senmon-nwp-005",
+  "exam_type": "senmon",
+  "question_type": "mcq",
+  "category": "numerical-weather-prediction",
+  "subcategory": "parameterization",
+  "title": "パラメタリゼーションの役割",
+  "difficulty": 3,
+  "tags": ["数値予報", "パラメタリゼーション", "物理過程"],
+  "question": "数値予報モデルにおいてパラメタリゼーションが必要となる主な理由として最も適切なものはどれか。",
+  "choices": [
+    "格子よりも小さいスケールの現象を、そのままでは直接計算できないため",
+    "観測データを数値に変換することができないため",
+    "初期値を与えなくても予報できるようにするため",
+    "計算結果を天気図に自動変換するため"
+  ],
+  "answer": 0,
+  "explanation": "数値予報モデルでは、雲や対流など格子スケールより小さい現象を直接表現できないことがある。そのため、それらの効果を近似的に表現するパラメタリゼーションが必要になる。",
+  "wrong_choice_explanations": [
+    "正解。格子より小さい現象の影響をモデル内で近似的に表現するために用いられる。",
+    "観測データの数値化そのものが主目的ではない。",
+    "パラメタリゼーションを用いても、予報には初期値が必要である。",
+    "天気図への変換は表示や後処理の話であり、パラメタリゼーションの主目的ではない。"
+  ],
+  "related_articles": [
+    "summaries.html#numerical-weather-prediction"
+  ],
+  "status": "published",
+  "created_at": "2026-03-28",
+  "updated_at": "2026-03-28"
   }
 ]
