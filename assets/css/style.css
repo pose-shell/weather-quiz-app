@@ -312,3 +312,81 @@ a {
 .category-card.coming-soon {
   opacity: 0.9;
 }
+
+/* questions　*/
+.questions-toolbar {
+  margin-bottom: 20px;
+}
+
+.questions-summary {
+  margin: 0;
+  color: #555;
+}
+
+.questions-list {
+  display: grid;
+  gap: 32px;
+}
+
+.question-group {
+  display: grid;
+  gap: 16px;
+}
+
+.question-group-title {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.question-group-list {
+  display: grid;
+  gap: 16px;
+}
+
+.question-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.question-item-main {
+  flex: 1;
+}
+
+.question-item-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.question-item-title {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+.question-item-text {
+  margin: 0;
+  color: #444;
+}
+
+.question-item-actions {
+  display: flex;
+  align-items: flex-start;
+}
+
+@media (max-width: 640px) {
+  .question-item {
+    flex-direction: column;
+  }
+
+  .question-item-actions {
+    align-items: stretch;
+  }
+}

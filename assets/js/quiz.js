@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const params = new URLSearchParams(window.location.search);
   const category = params.get("category") || "numerical-weather-prediction";
+  const startParam = params.get("start");
   const dataPath = CATEGORY_FILE_MAP[category];
 
   let questions = [];
@@ -58,8 +59,20 @@ document.addEventListener("DOMContentLoaded", async () => {
       throw new Error(`問題JSONの取得に失敗しました: ${response.status}`);
     }
 
-    questions = await response.json();
+  questions = await response.json();
+  if (!Array.isArray(questions) || questions.length === 0) {
+    throw new Error("問題データが空、または配列ではありません。");
+  }
 
+  const parsedStart = Number(startParam);
+
+  if (Number.isInteger(parsedStart) && parsedStart >= 0 && parsedStart < questions.length) {
+    currentIndex = parsedStart;
+  } else {
+    currentIndex = 0;
+  }
+
+renderQuestion();
     if (!Array.isArray(questions) || questions.length === 0) {
       throw new Error("問題データが空、または配列ではありません。");
     }

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>問題一覧 | 気象予報士 学科専門 演習サイト</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body>
+  <div id="site-header" data-page="questions"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-label">問題一覧</p>
+        <h2>公開中の問題を一覧で確認する</h2>
+        <p class="page-text">
+          現在公開している学科専門の問題を一覧表示します。
+          問題は今後カテゴリごとに順次追加していく想定です。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="questions-toolbar">
+          <p id="questions-summary" class="questions-summary">読み込み中...</p>
+        </div>
+
+        <div id="questions-list" class="questions-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>このサイトは学習用の非公式コンテンツです。</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/include.js"></script>
+  <script src="assets/js/questions.js"></script>
+</body>
+</html>
