@@ -50,6 +50,11 @@ a {
   color: #333;
 }
 
+.site-nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
 /* セクション */
 .section {
   padding: 48px 0;
@@ -245,4 +250,65 @@ a {
   .hero h2 {
     font-size: 1.5rem;
   }
+}
+
+/* category */
+.page-hero {
+  padding: 48px 0;
+  background: #ffffff;
+}
+
+.page-label {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.page-hero h2 {
+  margin: 0 0 16px;
+  font-size: 1.8rem;
+  line-height: 1.4;
+}
+
+.page-text {
+  margin: 0;
+  max-width: 720px;
+  color: #444;
+}
+
+.category-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid #222;
+  background: #222;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.status-badge.muted {
+  border-color: #bbb;
+  background: #f1f1f1;
+  color: #666;
+}
+
+.category-card.available {
+  transition: transform 0.15s ease;
+}
+
+.category-card.available:hover {
+  transform: translateY(-2px);
+}
+
+.category-card.coming-soon {
+  opacity: 0.9;
 }

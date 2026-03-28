@@ -1,5 +1,3 @@
-// assets/js/quiz.js
-
 document.addEventListener("DOMContentLoaded", async () => {
   const DATA_PATH = "assets/data/questions/numerical-weather-prediction.json";
 

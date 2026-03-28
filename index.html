@@ -7,17 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <h1 class="site-title">
-        <a href="index.html">気象予報士 学科専門 演習サイト</a>
-      </h1>
-      <nav class="site-nav">
-        <a href="index.html">トップ</a>
-        <a href="quiz.html">演習</a>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header" data-page="home"></div>
 
   <main>
     <section class="hero">
@@ -30,7 +20,7 @@
         </p>
 
         <div class="hero-actions">
-          <a class="button primary" href="quiz.html">数値予報の演習を始める</a>
+          <a class="button primary" href="categories.html">カテゴリ別に演習を始める</a>
         </div>
       </div>
     </section>
@@ -40,7 +30,7 @@
         <h2>現在公開中のカテゴリ</h2>
 
         <div class="card-grid">
-          <a class="card" href="quiz.html">
+          <a class="card" href="categories.html">
             <h3>数値予報</h3>
             <p>初期値、データ同化、格子間隔、アンサンブル予報など</p>
           </a>
@@ -80,5 +70,6 @@
       <p>このサイトは学習用の非公式コンテンツです。</p>
     </div>
   </footer>
+    <script src="assets/js/include.js"></script>
 </body>
 </html>
