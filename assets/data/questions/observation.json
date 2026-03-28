@@ -1,0 +1,157 @@
+[
+  {
+    "id": "senmon-obs-001",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "observation",
+    "subcategory": "surface-observation",
+    "title": "地上気象観測の基本",
+    "difficulty": 1,
+    "tags": ["観測", "地上観測", "気象要素"],
+    "question": "地上気象観測で通常観測対象となる気象要素として最も適切なものはどれか。",
+    "choices": [
+      "気温、湿度、風、気圧など",
+      "地球内部のマントル対流のみ",
+      "海底地形のみ",
+      "太陽黒点数のみ"
+    ],
+    "answer": 0,
+    "explanation": "地上気象観測では、気温、湿度、風向・風速、気圧、降水量などの気象要素を観測する。",
+    "wrong_choice_explanations": [
+      "正解。地上気象観測の基本要素である。",
+      "マントル対流は地球内部の現象であり、通常の地上気象観測の対象ではない。",
+      "海底地形は地形・海洋調査の対象であり、通常の気象観測要素ではない。",
+      "太陽黒点数は太陽活動の指標であり、通常の地上気象観測要素ではない。"
+    ],
+    "related_articles": [
+      "summaries.html#observation"
+    ],
+    "status": "published",
+    "created_at": "2026-03-28",
+    "updated_at": "2026-03-28"
+  },
+  {
+    "id": "senmon-obs-002",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "observation",
+    "subcategory": "upper-air-observation",
+    "title": "高層気象観測の役割",
+    "difficulty": 2,
+    "tags": ["観測", "高層観測", "ラジオゾンデ"],
+    "question": "高層気象観測の主な目的として最も適切なものはどれか。",
+    "choices": [
+      "上空の気温、湿度、風などの鉛直分布を把握すること",
+      "地表面温度だけを連続観測すること",
+      "海面水温だけを精密に測定すること",
+      "雷の発生回数だけを記録すること"
+    ],
+    "answer": 0,
+    "explanation": "高層気象観測では、ラジオゾンデなどにより上空の気温、湿度、風向・風速などの鉛直分布を把握する。",
+    "wrong_choice_explanations": [
+      "正解。高層観測の中心的な目的である。",
+      "地表面温度だけなら高層観測の目的としては不十分である。",
+      "海面水温のみの測定は高層観測の主目的ではない。",
+      "雷の発生回数のみを記録することが主目的ではない。"
+    ],
+    "related_articles": [
+      "summaries.html#observation"
+    ],
+    "status": "published",
+    "created_at": "2026-03-28",
+    "updated_at": "2026-03-28"
+  },
+  {
+    "id": "senmon-obs-003",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "observation",
+    "subcategory": "radar",
+    "title": "気象レーダーの特徴",
+    "difficulty": 2,
+    "tags": ["観測", "レーダー", "降水"],
+    "question": "気象レーダー観測の特徴として最も適切なものはどれか。",
+    "choices": [
+      "広い範囲の降水分布を面的に把握しやすい",
+      "地中深部の温度分布を直接観測できる",
+      "上空の気圧だけを連続して測定する",
+      "海流の流速だけを観測する"
+    ],
+    "answer": 0,
+    "explanation": "気象レーダーは降水粒子からの反射を利用し、広い範囲の降水分布を面的に把握しやすい。",
+    "wrong_choice_explanations": [
+      "正解。レーダー観測の大きな利点である。",
+      "地中深部の温度分布は気象レーダーの観測対象ではない。",
+      "上空の気圧だけを測る装置ではない。",
+      "海流のみを観測する装置ではない。"
+    ],
+    "related_articles": [
+      "summaries.html#observation"
+    ],
+    "status": "published",
+    "created_at": "2026-03-28",
+    "updated_at": "2026-03-28"
+  },
+  {
+    "id": "senmon-obs-004",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "observation",
+    "subcategory": "satellite",
+    "title": "気象衛星観測の利点",
+    "difficulty": 2,
+    "tags": ["観測", "気象衛星", "雲画像"],
+    "question": "気象衛星観測の利点として最も適切なものはどれか。",
+    "choices": [
+      "広域の雲分布や大気の状況を継続的に把握しやすい",
+      "地上の風速だけを一点で高精度に測定する",
+      "降水量を雨量計より常に正確に測定できる",
+      "地表付近の気温しか観測できない"
+    ],
+    "answer": 0,
+    "explanation": "気象衛星は広域の雲分布や水蒸気分布などを継続的に監視できるため、総観規模の把握に有効である。",
+    "wrong_choice_explanations": [
+      "正解。衛星観測の代表的な利点である。",
+      "一点の地上風速だけを測るための観測ではない。",
+      "降水量の直接精密観測では地上雨量計などと役割が異なる。",
+      "地表付近の気温だけしか見られないわけではない。"
+    ],
+    "related_articles": [
+      "summaries.html#observation"
+    ],
+    "status": "published",
+    "created_at": "2026-03-28",
+    "updated_at": "2026-03-28"
+  },
+  {
+    "id": "senmon-obs-005",
+    "exam_type": "senmon",
+    "question_type": "mcq",
+    "category": "observation",
+    "subcategory": "observation-error",
+    "title": "観測誤差への注意",
+    "difficulty": 3,
+    "tags": ["観測", "観測誤差", "品質管理"],
+    "question": "気象観測データを利用する際の考え方として最も適切なものはどれか。",
+    "choices": [
+      "観測には誤差や欠測の可能性があるため、品質管理が重要である",
+      "観測値は常に完全に正しいため検査は不要である",
+      "一度観測した値は将来も必ず同じになる",
+      "観測誤差は数値予報には全く影響しない"
+    ],
+    "answer": 0,
+    "explanation": "観測データには機器誤差や通信異常、欠測などが含まれる可能性があるため、利用前に品質管理を行うことが重要である。",
+    "wrong_choice_explanations": [
+      "正解。観測データ利用では品質管理が重要である。",
+      "観測値には誤差や異常値が含まれる可能性がある。",
+      "観測対象の大気状態は変動するため、同じ値になるとは限らない。",
+      "観測誤差は初期値や解析値を通じて数値予報にも影響しうる。"
+    ],
+    "related_articles": [
+      "summaries.html#observation"
+    ],
+    "status": "published",
+    "created_at": "2026-03-28",
+    "updated_at": "2026-03-28"
+  }
+]

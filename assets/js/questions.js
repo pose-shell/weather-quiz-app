@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const CATEGORY_FILE_MAP = {
-    "numerical-weather-prediction": "assets/data/questions/numerical-weather-prediction.json"
+    "numerical-weather-prediction": "assets/data/questions/numerical-weather-prediction.json",
+    "observation": "assets/data/questions/observation.json"
   };
 
   const CATEGORY_LABEL_MAP = {
-    "numerical-weather-prediction": "数値予報"
+    "numerical-weather-prediction": "数値予報",
+    "observation" : "観測"
   };
 
   const summaryEl = document.getElementById("questions-summary");
