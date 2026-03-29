@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>分野別まとめ | 気象予報士 学科専門 演習サイト</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div id="site-header" data-page="summaries"></div>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="page-label">分野別まとめ</p>
+        <h2>問題演習とあわせて要点を確認する</h2>
+        <p class="page-text">
+          学科専門の各分野について、問題演習の前後に確認したい要点を簡潔に整理しています。
+          現在は数値予報と観測を掲載中です。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="summary-index">
+          <a class="summary-index-item" href="#numerical-weather-prediction">数値予報</a>
+          <a class="summary-index-item" href="#observation">観測</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="numerical-weather-prediction" class="section section-alt">
+      <div class="container">
+        <article class="summary-article">
+          <header class="summary-header">
+            <p class="summary-category">数値予報</p>
+            <h2>数値予報の基本整理</h2>
+          </header>
+
+          <div class="summary-block">
+            <h3>1. 初期値</h3>
+            <p>
+              数値予報は、ある時刻の大気状態を初期値として計算を開始する。
+              初期値の精度は予報精度に大きく影響するため、観測データを適切に取り込むことが重要である。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>2. データ同化</h3>
+            <p>
+              観測値とモデルの背景場を組み合わせて、より妥当な初期値を作る手法がデータ同化である。
+              数値予報の出発点を改善する中心的な考え方である。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>3. 解像度と格子間隔</h3>
+            <p>
+              格子間隔を細かくすると、より細かな現象を表現しやすくなる一方で、計算量は増える。
+              すべての現象をそのまま解けるわけではなく、格子より小さい現象の扱いが課題となる。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>4. パラメタリゼーション</h3>
+            <p>
+              雲や対流など、格子より小さいスケールの現象は直接計算しきれないことがある。
+              そのため、それらの効果を近似的に表現する仕組みが必要になる。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>5. アンサンブル予報</h3>
+            <p>
+              初期値やモデル条件を少しずつ変えて複数の予報を計算し、予報のばらつきから不確実性を評価する。
+              予報がどの程度安定しているかを見るための重要な手法である。
+            </p>
+          </div>
+
+          <div class="summary-actions">
+            <a class="button" href="quiz.html?category=numerical-weather-prediction">数値予報の演習へ</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="observation" class="section">
+      <div class="container">
+        <article class="summary-article">
+          <header class="summary-header">
+            <p class="summary-category">観測</p>
+            <h2>観測の基本整理</h2>
+          </header>
+
+          <div class="summary-block">
+            <h3>1. 地上観測</h3>
+            <p>
+              地上観測では、気温、湿度、風向・風速、気圧、降水量などの基本的な気象要素を把握する。
+              実況監視や解析の基礎になる観測である。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>2. 高層観測</h3>
+            <p>
+              ラジオゾンデなどを用いて、上空の気温、湿度、風の鉛直分布を調べる。
+              地上だけでは分からない大気の立体構造を把握できる。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>3. レーダー観測</h3>
+            <p>
+              広い範囲の降水分布を面的に捉えやすいのが特徴である。
+              短時間予報や実況監視で特に重要な役割を持つ。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>4. 気象衛星観測</h3>
+            <p>
+              広域の雲分布や水蒸気分布を継続的に把握しやすく、総観規模の現象を捉えるのに有効である。
+              海上や観測点の少ない地域を補う役割も大きい。
+            </p>
+          </div>
+
+          <div class="summary-block">
+            <h3>5. 品質管理</h3>
+            <p>
+              観測データには誤差や欠測、異常値が含まれることがある。
+              そのため、観測値をそのまま使うのではなく、品質管理を通して信頼性を確認することが重要である。
+            </p>
+          </div>
+
+          <div class="summary-actions">
+            <a class="button" href="quiz.html?category=observation">観測の演習へ</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>このサイトは学習用の非公式コンテンツです。</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/include.js"></script>
+</body>
+</html>
