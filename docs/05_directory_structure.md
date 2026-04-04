@@ -1,16 +1,20 @@
 # ディレクトリ構成
-
-project/
-├─ docs/
-├─ assets/
-│  ├─ css/
-│  ├─ js/
-│  └─ data/
-│     ├─ categories.json
-│     └─ questions/
-├─ index.html
-├─ categories.html
-├─ quiz.html
-├─ questions.html
-├─ summaries.html
-└─ about.html
+- project/
+  - docs/
+    - 01_overviw.md
+    - 02_screen_list.md
+    - 03_data_design.md
+    - 04_directory_structure.md
+    - 05_future_extension.md
+  - assets/
+    - css/
+    - js/
+    - data/
+      - questions/
+  - categories.html
+  - index.html
+  - questions.html
+  - quiz.html
+  - README.md
+  - summaries.html
+  - test.md
