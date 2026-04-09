@@ -5,7 +5,7 @@ title: 数値予報とは何か
 category: nwp
 tags: [数値予報]
 status: draft
-related_q_ids: [q-sen-nwp-001]
+related_q_ids: [q-sen-nwp-001,q-sen-nwp-002]
 related_art_ids: []
 order: 1
 created_at: "2026-04-05"

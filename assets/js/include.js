@@ -1,12 +1,20 @@
+const BASE_PATH = "/weather-quiz-app";
+
+function buildPath(path) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${BASE_PATH}${normalizedPath}`;
+}
+
 async function loadPartial(id, path) {
   const target = document.getElementById(id);
   if (!target) return;
 
   try {
-    const response = await fetch(path, { cache: "no-store" });
+    const fullPath = buildPath(path);
+    const response = await fetch(fullPath, { cache: "no-store" });
 
     if (!response.ok) {
-      throw new Error(`Failed to load partial: ${path}`);
+      throw new Error(`Failed to load partial: ${fullPath} (status: ${response.status})`);
     }
 
     const html = await response.text();
@@ -20,11 +28,12 @@ async function loadPartial(id, path) {
       }
     }
   } catch (error) {
-    console.error(error);
+    console.error("loadPartial error:", error);
     target.innerHTML = "<p>ヘッダーの読み込みに失敗しました。</p>";
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    loadPartial("site-header", "assets/partials/header.html");
+  loadPartial("site-header", "/assets/partials/header.html");
+  loadPartial("site-footer", "/assets/partials/footer.html");
 });

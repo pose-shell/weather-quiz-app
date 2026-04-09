@@ -450,3 +450,95 @@ a {
   gap: 12px;
   flex-wrap: wrap;
 }
+
+/* art　*/
+.article-card,
+.related-articles,
+.quiz-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.article-card__category,
+.article-card__meta {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.article-card__tags,
+.related-articles__list {
+  padding-left: 1.2rem;
+}
+
+.article-card__title {
+  margin: 0.4rem 0 0.8rem;
+}
+
+/* articles.html */
+.articles-page {
+  padding: 32px 0 48px;
+}
+
+.articles-page-title {
+  margin: 0 0 20px;
+  font-size: 1.8rem;
+}
+
+.articles-list {
+  display: grid;
+  gap: 16px;
+}
+
+.article-card {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  background: #fff;
+}
+
+.article-card__category {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.article-card__title {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.article-card__title a {
+  color: inherit;
+}
+
+.article-card__title a:hover {
+  text-decoration: underline;
+}
+
+.article-card__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 12px;
+  list-style: none;
+}
+
+.article-card__tags li {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #f1f1f1;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.article-card__meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+}

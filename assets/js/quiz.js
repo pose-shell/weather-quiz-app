@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const prevButtonEl = document.getElementById("prev-button");
   const nextButtonEl = document.getElementById("next-button");
+  const relatedArticlesContainerEl = document.getElementById("related-articles-container");
+  let articlesIndex = []; 
 
   if (!dataPath) {
     showLoadError("存在しないカテゴリです。");
@@ -64,6 +66,14 @@ document.addEventListener("DOMContentLoaded", async () => {
     throw new Error("問題データが空、または配列ではありません。");
   }
 
+  const articlesResponse = await fetch("assets/data/articles.json", { cache: "no-store" });
+
+  if (!articlesResponse.ok) {
+    throw new Error(`記事一覧JSONの取得に失敗しました: ${articlesResponse.status}`);
+  }
+
+  articlesIndex = await articlesResponse.json();
+
   const parsedStart = Number(startParam);
 
   if (Number.isInteger(parsedStart) && parsedStart >= 0 && parsedStart < questions.length) {
@@ -73,11 +83,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
 renderQuestion();
-    if (!Array.isArray(questions) || questions.length === 0) {
-      throw new Error("問題データが空、または配列ではありません。");
-    }
 
-    renderQuestion();
   } catch (error) {
     console.error(error);
     showLoadError("問題データの読み込みに失敗しました。");
@@ -138,6 +144,8 @@ renderQuestion();
     answerButtonEl.disabled = false;
     prevButtonEl.disabled = currentIndex === 0;
     nextButtonEl.disabled = currentIndex === questions.length - 1;
+
+    renderRelatedArticles(question);
   }
 
   function updateChoiceSelection() {
@@ -207,6 +215,41 @@ renderQuestion();
     }
   }
 
+function renderRelatedArticles(question) {
+  if (!relatedArticlesContainerEl) return;
+
+  const relatedIds = Array.isArray(question.related_art_ids)
+    ? question.related_art_ids
+    : [];
+
+  if (relatedIds.length === 0) {
+    relatedArticlesContainerEl.innerHTML = "";
+    return;
+  }
+
+  const matchedArticles = relatedIds
+    .map((id) => articlesIndex.find((article) => article.id === id))
+    .filter(Boolean);
+
+  if (matchedArticles.length === 0) {
+    relatedArticlesContainerEl.innerHTML = "";
+    return;
+  }
+
+  relatedArticlesContainerEl.innerHTML = `
+    <section class="related-articles">
+      <h2>関連記事</h2>
+      <ul class="related-articles__list">
+        ${matchedArticles.map((article) => `
+          <li>
+            <a href="${article.url}">${escapeHtml(article.title)}</a>
+          </li>
+        `).join("")}
+      </ul>
+    </section>
+  `;
+}
+
   function moveQuestion(direction) {
     const nextIndex = currentIndex + direction;
 
@@ -217,6 +260,19 @@ renderQuestion();
     currentIndex = nextIndex;
     renderQuestion();
   }
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (ch) => {
+    const map = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    };
+    return map[ch];
+  });
+}
 
   function choiceLabel(index) {
     return ["A", "B", "C", "D"][index] ?? String(index + 1);
